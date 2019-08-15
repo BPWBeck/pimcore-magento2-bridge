@@ -44,12 +44,8 @@ class MapTextKey extends AbstractMapKeyStrategy
         $language
     ): void {
         $names = $this->mapStringNames($attribute['name'], $group['name'], $arrayMapping);
-        $type = static::TYPE;
-        if($field->getType() === 'numeric'){
-            $type = $field->getType();
-        }
         $parsedData = [
-            'type' => $type,
+            'type' => static::TYPE,
             'value' => $attribute['value'],
             'label' => $this->getLabel($field->getTitle(), $language)
         ];
